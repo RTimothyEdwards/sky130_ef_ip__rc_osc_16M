@@ -1,0 +1,40 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -130 -60 130 -60 {}
+L 4 -130 60 130 60 {}
+L 4 -130 -60 -130 60 {}
+L 4 130 -60 130 60 {}
+L 4 130 -20 150 -20 {}
+L 4 130 20 150 20 {}
+L 4 -150 0 -130 0 {}
+L 4 130 50 150 50 {}
+L 7 30 -80 30 -60 {}
+L 7 -30 -80 -30 -60 {}
+L 7 -30 60 -30 80 {}
+L 7 30 60 30 80 {}
+B 5 27.5 -82.5 32.5 -77.5 {name=dvdd dir=inout}
+B 5 147.5 -22.5 152.5 -17.5 {name=out_h dir=out}
+B 5 -32.5 -82.5 -27.5 -77.5 {name=avdd dir=inout}
+B 5 147.5 17.5 152.5 22.5 {name=outb_h dir=out}
+B 5 -152.5 -2.5 -147.5 2.5 {name=in_l dir=in}
+B 5 27.5 77.5 32.5 82.5 {name=dvss dir=inout}
+B 5 -32.5 77.5 -27.5 82.5 {name=avss dir=inout}
+B 5 147.5 47.5 152.5 52.5 {name=inb_l dir=out}
+T {@symname} -46.5 -6 0 0 0.3 0.3 {}
+T {@name} 85 -72 0 0 0.2 0.2 {}
+T {dvdd} 45 -54 0 1 0.2 0.2 {}
+T {out_h} 125 -24 0 1 0.2 0.2 {}
+T {avdd} -15 -54 0 1 0.2 0.2 {}
+T {outb_h} 125 16 0 1 0.2 0.2 {}
+T {in_l} -125 -4 0 0 0.2 0.2 {}
+T {dvss} 45 46 0 1 0.2 0.2 {}
+T {avss} -15 46 0 1 0.2 0.2 {}
+T {inb_l} 125 46 0 1 0.2 0.2 {}

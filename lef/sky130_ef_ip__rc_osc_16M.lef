@@ -1,0 +1,82 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO sky130_ef_ip__rc_osc_16M
+  CLASS BLOCK ;
+  FOREIGN sky130_ef_ip__rc_osc_16M ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 61.210 BY 53.620 ;
+  PIN avdd
+    ANTENNADIFFAREA 136.770493 ;
+    PORT
+      LAYER met2 ;
+        RECT 0.000 38.505 53.490 44.095 ;
+    END
+    PORT
+      LAYER met2 ;
+        RECT 53.930 38.505 54.430 44.095 ;
+    END
+  END avdd
+  PIN avss
+    ANTENNADIFFAREA 96.482201 ;
+    PORT
+      LAYER met2 ;
+        RECT 0.000 9.720 1.595 15.310 ;
+    END
+    PORT
+      LAYER met2 ;
+        RECT 52.890 9.720 54.430 15.310 ;
+    END
+  END avss
+  PIN dvss
+    ANTENNADIFFAREA 5.493300 ;
+    PORT
+      LAYER met1 ;
+        RECT 52.540 31.820 54.430 35.605 ;
+    END
+  END dvss
+  PIN dvdd
+    ANTENNADIFFAREA 5.371800 ;
+    PORT
+      LAYER met1 ;
+        RECT 52.540 18.170 54.430 23.400 ;
+    END
+  END dvdd
+  PIN ena
+    ANTENNAGATEAREA 0.985500 ;
+    ANTENNADIFFAREA 0.202500 ;
+    PORT
+      LAYER met2 ;
+        RECT 53.850 24.980 54.850 25.980 ;
+    END
+  END ena
+  PIN dout
+    ANTENNADIFFAREA 0.731800 ;
+    PORT
+      LAYER met2 ;
+        RECT 53.850 29.250 54.850 30.250 ;
+    END
+  END dout
+  OBS
+      LAYER nwell ;
+        RECT 0.000 3.500 54.885 50.120 ;
+      LAYER li1 ;
+        RECT 0.430 3.965 54.705 49.680 ;
+      LAYER met1 ;
+        RECT 0.430 35.885 54.350 47.500 ;
+        RECT 0.430 31.540 52.260 35.885 ;
+        RECT 0.430 23.680 54.350 31.540 ;
+        RECT 0.430 17.890 52.260 23.680 ;
+        RECT 0.430 6.090 54.350 17.890 ;
+      LAYER met2 ;
+        RECT 0.460 30.530 54.285 38.225 ;
+        RECT 0.460 28.970 53.570 30.530 ;
+        RECT 0.460 26.260 54.285 28.970 ;
+        RECT 0.460 24.700 53.570 26.260 ;
+        RECT 0.460 15.590 54.285 24.700 ;
+        RECT 1.875 9.720 52.610 15.590 ;
+  END
+END sky130_ef_ip__rc_osc_16M
+END LIBRARY
+
