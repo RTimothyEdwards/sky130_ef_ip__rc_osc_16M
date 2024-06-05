@@ -974,7 +974,7 @@ use sky130_fd_pr__diode_pw2nd_05v5_FT76RJ  D3 paramcells
 timestamp 1699295625
 transform 1 0 9223 0 1 5604
 box -183 -183 183 183
-use level_shifter  level_shifter_0
+use rc_osc_level_shifter  rc_osc_level_shifter_0
 timestamp 1699295625
 transform -1 0 9816 0 -1 4214
 box -422 -2544 2736 144

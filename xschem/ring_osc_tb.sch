@@ -6,15 +6,15 @@ V {}
 S {}
 E {}
 B 2 300 -30 1100 370 {flags=graph
-y1=-2e-06
-y2=2e-06
+y1=-0.00013782313
+y2=0.00014351177
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1e-11
-x2=2e-05
+x1=1.330365e-05
+x2=1.3591881e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1e-11
-x2=2e-05
+x1=1.330365e-05
+x2=1.3591881e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -100,7 +100,7 @@ C {devices/lab_wire.sym} -90 -120 0 0 {name=p4 sig_type=std_logic lab=vdd3v3}
 C {devices/lab_wire.sym} 270 -30 0 0 {name=p5 sig_type=std_logic lab=dout}
 C {devices/capa.sym} 220 40 0 0 {name=C3
 m=1
-value=1.5p
+value=250f
 footprint=1206
 device="ceramic capacitor"}
 C {devices/vsource.sym} -430 -30 0 1 {name=V3 value="PWL(0 0 10u 0 10.01u 1.8 100u 1.8 100.01u 0 200u 0 200.01u 1.8)" savecurrent=false}
