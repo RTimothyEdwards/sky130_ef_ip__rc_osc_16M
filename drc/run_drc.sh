@@ -7,7 +7,7 @@ drc style drc(full)
 drc on
 drc check
 drc catchup
-drc count
+drc count total
 set tk_version 8.5
 source \${CAD_ROOT}/magic/tcl/drcmgr.tcl
 #feedback save drc.log
