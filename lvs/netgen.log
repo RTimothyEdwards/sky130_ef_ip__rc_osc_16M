@@ -25,7 +25,7 @@ Call to undefined subcircuit sky130_fd_pr__pfet_01v8
 Creating placeholder cell definition.
 Call to undefined subcircuit sky130_fd_pr__res_xhigh_po_0p35
 Creating placeholder cell definition.
-Call to undefined subcircuit level_shifter
+Call to undefined subcircuit rc_osc_level_shifter
 Creating placeholder cell definition.
 Call to undefined subcircuit sky130_fd_pr__diode_pw2nd_05v5
 Creating placeholder cell definition.
@@ -147,8 +147,8 @@ No property value found for device sky130_fd_pr__diode_pw2nd_05v5
 No property mult found for device sky130_fd_pr__diode_pw2nd_05v5
 No property value found for device sky130_fd_pr__diode_pw2nd_05v5
 No property mult found for device sky130_fd_pr__diode_pw2nd_05v5
-Comparison output logged to file rc_osc_16M_comp.out
-Logging to file "rc_osc_16M_comp.out" enabled
+Comparison output logged to file sky130_ef_ip__rc_osc_16M_comp.out
+Logging to file "sky130_ef_ip__rc_osc_16M_comp.out" enabled
 Circuit sky130_fd_pr__pfet_g5v0d10v5 contains no devices.
 Circuit sky130_fd_pr__nfet_g5v0d10v5 contains no devices.
 Circuit sky130_fd_pr__pfet_01v8 contains no devices.
@@ -156,15 +156,15 @@ Circuit sky130_fd_pr__nfet_01v8 contains no devices.
 Circuit sky130_fd_pr__diode_pw2nd_05v5 contains no devices.
 Circuit sky130_fd_pr__res_xhigh_po_0p35 contains no devices.
 
-Contents of circuit 1:  Circuit: 'level_shifter'
-Circuit level_shifter contains 8 device instances.
+Contents of circuit 1:  Circuit: 'rc_osc_level_shifter'
+Circuit rc_osc_level_shifter contains 8 device instances.
   Class: sky130_fd_pr__nfet_01v8 instances:   1
   Class: sky130_fd_pr__pfet_01v8 instances:   1
   Class: sky130_fd_pr__nfet_g5v0d10v5 instances:   2
   Class: sky130_fd_pr__pfet_g5v0d10v5 instances:   4
 Circuit contains 10 nets.
-Contents of circuit 2:  Circuit: 'level_shifter'
-Circuit level_shifter contains 8 device instances.
+Contents of circuit 2:  Circuit: 'rc_osc_level_shifter'
+Circuit rc_osc_level_shifter contains 8 device instances.
   Class: sky130_fd_pr__nfet_01v8 instances:   1
   Class: sky130_fd_pr__pfet_01v8 instances:   1
   Class: sky130_fd_pr__nfet_g5v0d10v5 instances:   2
@@ -178,21 +178,21 @@ Circuit 1 contains 10 nets,    Circuit 2 contains 10 nets.
 Contents of circuit 1:  Circuit: 'sky130_ef_ip__rc_osc_16M'
 Circuit sky130_ef_ip__rc_osc_16M contains 162 device instances.
   Class: sky130_fd_pr__nfet_01v8 instances:   2
-  Class: level_shifter         instances:   1
   Class: sky130_fd_pr__res_xhigh_po_0p35 instances: 120
   Class: sky130_fd_pr__pfet_01v8 instances:   3
   Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  17
   Class: sky130_fd_pr__diode_pw2nd_05v5 instances:   1
+  Class: rc_osc_level_shifter  instances:   1
   Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  18
-Circuit contains 150 nets.
+Circuit contains 149 nets.
 Contents of circuit 2:  Circuit: 'sky130_ef_ip__rc_osc_16M'
-Circuit sky130_ef_ip__rc_osc_16M contains 38 device instances.
+Circuit sky130_ef_ip__rc_osc_16M contains 39 device instances.
   Class: sky130_fd_pr__nfet_01v8 instances:   2
-  Class: level_shifter         instances:   1
-  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:   1
+  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:   2
   Class: sky130_fd_pr__pfet_01v8 instances:   3
   Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  17
   Class: sky130_fd_pr__diode_pw2nd_05v5 instances:   1
+  Class: rc_osc_level_shifter  instances:   1
   Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  13
 Circuit contains 31 nets.
 
@@ -200,32 +200,32 @@ Circuit was modified by parallel/series device merging.
 New circuit summary:
 
 Contents of circuit 1:  Circuit: 'sky130_ef_ip__rc_osc_16M'
-Circuit sky130_ef_ip__rc_osc_16M contains 38 device instances.
+Circuit sky130_ef_ip__rc_osc_16M contains 39 device instances.
   Class: sky130_fd_pr__nfet_01v8 instances:   2
-  Class: level_shifter         instances:   1
-  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:   1
+  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:   2
   Class: sky130_fd_pr__pfet_01v8 instances:   3
   Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  17
   Class: sky130_fd_pr__diode_pw2nd_05v5 instances:   1
+  Class: rc_osc_level_shifter  instances:   1
   Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  13
 Circuit contains 31 nets.
 Contents of circuit 2:  Circuit: 'sky130_ef_ip__rc_osc_16M'
-Circuit sky130_ef_ip__rc_osc_16M contains 38 device instances.
+Circuit sky130_ef_ip__rc_osc_16M contains 39 device instances.
   Class: sky130_fd_pr__nfet_01v8 instances:   2
-  Class: level_shifter         instances:   1
-  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:   1
+  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:   2
   Class: sky130_fd_pr__pfet_01v8 instances:   3
   Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  17
   Class: sky130_fd_pr__diode_pw2nd_05v5 instances:   1
+  Class: rc_osc_level_shifter  instances:   1
   Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  13
 Circuit contains 31 nets.
 
-Circuit 1 contains 38 devices, Circuit 2 contains 38 devices.
+Circuit 1 contains 39 devices, Circuit 2 contains 39 devices.
 Circuit 1 contains 31 nets,    Circuit 2 contains 31 nets.
 
 
 Final result: 
 Circuits match uniquely.
 .
-Logging to file "rc_osc_16M_comp.out" disabled
+Logging to file "sky130_ef_ip__rc_osc_16M_comp.out" disabled
 LVS Done.

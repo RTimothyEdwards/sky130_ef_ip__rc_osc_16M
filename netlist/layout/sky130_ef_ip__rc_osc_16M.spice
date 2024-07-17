@@ -20,7 +20,7 @@ X0 a_15_n64# a_n33_n161# a_n73_n64# w_n211_n284# sky130_fd_pr__pfet_01v8 ad=0.29
 X0 a_15_n131# a_n33_91# a_n73_n131# a_n175_n243# sky130_fd_pr__nfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.15
 .ends
 
-.subckt level_shifter out_h outb_h in_l dvss inb_l avss dvdd avdd
+.subckt rc_osc_level_shifter dvdd out_h outb_h in_l dvss inb_l avss avdd
 XXM15 outb_h out_h avdd m1_1336_n1198# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM16 avdd outb_h avdd m1_1336_n1198# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM17 avss outb_h avss in_l sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
@@ -138,26 +138,26 @@ X0 a_50_n126# a_n50_n223# a_n108_n126# w_n308_n423# sky130_fd_pr__pfet_g5v0d10v5
 .subckt sky130_ef_ip__rc_osc_16M avdd avss dvss dvdd ena dout
 XXM12 avss m1_6428_4585# avss m1_2993_5163# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM34 avdd m1_1507_5567# avdd m1_1507_5567# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
-XXM23 avss m1_5241_4130# m1_513_6590# level_shifter_0/out_h sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
-XXM35 dout level_shifter_0/inb_l dvss dvss sky130_fd_pr__nfet_01v8_L7BSKG
+XXM23 avss m1_5241_4130# m1_513_6590# rc_osc_level_shifter_0/out_h sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
+XXM35 dout rc_osc_level_shifter_0/inb_l dvss dvss sky130_fd_pr__nfet_01v8_L7BSKG
 XXM13 avss m1_6642_4785# m1_6428_4585# ena sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM25 avdd m1_1507_5567# avdd m1_3601_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM24 avdd m1_1507_5567# avdd m1_2985_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
-XXM36 avss m1_2561_4188# m1_1507_5567# level_shifter_0/out_h sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
-XXM15 m1_2993_5163# m1_4789_4781# avdd m1_5449_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
+XXM36 avss m1_2561_4188# m1_1507_5567# rc_osc_level_shifter_0/out_h sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM26 avdd m1_1507_5567# avdd m1_4217_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
+XXM15 m1_2993_5163# m1_4789_4781# avdd m1_5449_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM16 avss m1_2993_5163# m1_5128_4639# m1_4789_4781# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM27 avss m1_4016_4639# avss m1_5241_4130# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM17 avdd m1_1507_5567# avdd m1_4833_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM28 avss m1_3460_4639# avss m1_5241_4130# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
+Xrc_osc_level_shifter_0 dvdd rc_osc_level_shifter_0/out_h rc_osc_level_shifter_0/outb_h
++ ena dvss rc_osc_level_shifter_0/inb_l avss avdd rc_osc_level_shifter
 XXM18 avdd m1_1507_5567# avdd m1_1507_5567# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM29 avss m1_2904_4639# avss m1_5241_4130# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM19 avss m1_5128_4639# avss m1_5241_4130# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM1 avss m1_3128_4787# m1_2904_4639# m1_2993_5163# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM2 m1_3128_4787# m1_2993_5163# avdd m1_2985_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM3 m1_3679_4781# m1_3128_4787# avdd m1_3601_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
-Xlevel_shifter_0 level_shifter_0/out_h level_shifter_0/outb_h ena dvss level_shifter_0/inb_l
-+ avss dvdd avdd level_shifter
 XXM4 avss m1_3679_4781# m1_3460_4639# m1_3128_4787# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 Xsky130_fd_pr__nfet_01v8_L9WNCD_0 dout dvss dvss m1_6642_4785# sky130_fd_pr__nfet_01v8_L9WNCD
 XD3 dvss ena sky130_fd_pr__diode_pw2nd_05v5_FT76RJ
@@ -165,8 +165,8 @@ XXM7 m1_4789_4781# m1_4235_4789# avdd m1_4833_5653# sky130_fd_pr__pfet_g5v0d10v5
 XXM9 m1_4235_4789# m1_3679_4781# avdd m1_4217_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 XXM8 avss m1_4789_4781# m1_4572_4639# m1_4235_4789# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 Xsky130_fd_pr__pfet_g5v0d10v5_6ELFTH_0 avdd m1_1507_5567# avdd m1_1507_5567# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
-Xsky130_fd_pr__pfet_01v8_856REK_0 dout level_shifter_0/inb_l dvdd m1_6642_4785# dvdd
-+ sky130_fd_pr__pfet_01v8_856REK
+Xsky130_fd_pr__pfet_01v8_856REK_0 dout rc_osc_level_shifter_0/inb_l dvdd m1_6642_4785#
++ dvdd sky130_fd_pr__pfet_01v8_856REK
 Xsky130_fd_pr__pfet_g5v0d10v5_6ELFTH_1 avdd m1_1507_5567# avdd m1_1507_5567# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 Xsky130_fd_pr__res_xhigh_po_0p35_NVJ5PF_0 m1_7838_1218# m1_9166_1218# m1_3024_3118#
 + m1_3522_1218# m1_2028_3118# m1_1862_1218# m1_4518_1218# m1_6842_1218# m1_7008_3118#
@@ -179,16 +179,16 @@ Xsky130_fd_pr__res_xhigh_po_0p35_NVJ5PF_0 m1_7838_1218# m1_9166_1218# m1_3024_31
 + m1_1530_1218# m1_7008_3118# m1_1032_3118# m1_8004_3118# m1_9830_1218# m1_2526_1218#
 + m1_4684_3118# m1_9000_3118# m1_1198_1218# avss m1_8834_1218# m1_3522_1218# m1_3688_3118#
 + m1_2692_3118# m1_7838_1218# m1_1696_3118# m1_2194_1218# m1_866_1218# m1_4518_1218#
-+ m1_6344_3118# m1_5846_1218# m1_9664_3118# m1_9498_1218# m1_3190_1218# m1_7340_3118#
-+ m1_1862_1218# m1_3688_3118# m1_6842_1218# m1_700_3118# m1_4684_3118# m1_6178_1218#
-+ m1_8502_1218# m1_2858_1218# m1_8336_3118# m1_4186_1218# m1_2692_3118# m1_9332_3118#
-+ m1_1696_3118# m1_1198_1218# m1_5348_3118# m1_7506_1218# m1_3854_1218# m1_700_3118#
-+ m1_5680_3118# m1_10162_1218# m1_4850_1218# m1_2194_1218# m1_6510_1218# m1_6676_3118#
-+ m1_5514_1218# m1_7672_3118# m1_9166_1218# m1_3356_3118# m1_4352_3118# m1_2360_3118#
-+ m1_3190_1218# m1_8668_3118# m1_534_1218# m1_4186_1218# m1_6676_3118# m1_8170_1218#
-+ m1_9664_3118# m1_1364_3118# m1_9830_1218# m1_1530_1218# m1_5680_3118# avdd m1_7174_1218#
-+ m1_8834_1218# m1_7672_3118# m1_5514_1218# m1_4020_3118# m1_5016_3118# m1_8668_3118#
-+ m1_2526_1218# m1_866_1218# sky130_fd_pr__res_xhigh_po_0p35_NVJ5PF
++ m1_6344_3118# m1_5846_1218# avdd m1_9498_1218# m1_3190_1218# m1_7340_3118# m1_1862_1218#
++ m1_3688_3118# m1_6842_1218# m1_700_3118# m1_4684_3118# m1_6178_1218# m1_8502_1218#
++ m1_2858_1218# m1_8336_3118# m1_4186_1218# m1_2692_3118# m1_9332_3118# m1_1696_3118#
++ m1_1198_1218# m1_5348_3118# m1_7506_1218# m1_3854_1218# m1_700_3118# m1_5680_3118#
++ m1_10162_1218# m1_4850_1218# m1_2194_1218# m1_6510_1218# m1_6676_3118# m1_5514_1218#
++ m1_7672_3118# m1_9166_1218# m1_3356_3118# m1_4352_3118# m1_2360_3118# m1_3190_1218#
++ m1_8668_3118# m1_534_1218# m1_4186_1218# m1_6676_3118# m1_8170_1218# avdd m1_1364_3118#
++ m1_9830_1218# m1_1530_1218# m1_5680_3118# avdd m1_7174_1218# m1_8834_1218# m1_7672_3118#
++ m1_5514_1218# m1_4020_3118# m1_5016_3118# m1_8668_3118# m1_2526_1218# m1_866_1218#
++ sky130_fd_pr__res_xhigh_po_0p35_NVJ5PF
 Xsky130_fd_pr__res_xhigh_po_0p35_NVJ5PF_1 m1_7652_7168# m1_8980_7168# m1_3170_9068#
 + m1_3336_7168# m1_2174_9068# m1_2008_7168# m1_4664_7168# m1_6656_7168# m1_6822_9068#
 + m1_10142_9068# m1_7984_7168# m1_5992_7168# m1_5826_9068# m1_6988_7168# m1_4166_9068#
@@ -211,7 +211,7 @@ Xsky130_fd_pr__res_xhigh_po_0p35_NVJ5PF_1 m1_7652_7168# m1_8980_7168# m1_3170_90
 + m1_7320_7168# m1_8648_7168# m1_7486_9068# m1_5328_7168# m1_4166_9068# m1_5162_9068#
 + m1_8482_9068# m1_2340_7168# m1_1012_7168# sky130_fd_pr__res_xhigh_po_0p35_NVJ5PF
 Xsky130_fd_pr__pfet_g5v0d10v5_6ELFTH_2 m1_1507_5567# m1_1507_5567# avdd avdd sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
-Xsky130_fd_pr__pfet_g5v0d10v5_6ELFTH_3 avdd level_shifter_0/out_h avdd m1_1507_5567#
+Xsky130_fd_pr__pfet_g5v0d10v5_6ELFTH_3 avdd rc_osc_level_shifter_0/out_h avdd m1_1507_5567#
 + sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
 Xsky130_fd_pr__pfet_01v8_2Z69BZ_0 dvdd m1_6642_4785# dvdd ena sky130_fd_pr__pfet_01v8_2Z69BZ
 Xsky130_fd_pr__pfet_g5v0d10v5_6ELFTH_5 avdd m1_1507_5567# avdd m1_5449_5653# sky130_fd_pr__pfet_g5v0d10v5_6ELFTH
@@ -221,6 +221,6 @@ XXM30 avss m1_2561_4188# avss m1_5241_4130# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM20 avss m1_4572_4639# avss m1_5241_4130# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM10 avss m1_4235_4789# m1_4016_4639# m1_3679_4781# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 XXM21 avss m1_5241_4130# avss m1_5241_4130# sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
-XXM33 avss m1_5241_4130# avss level_shifter_0/outb_h sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
+XXM33 avss m1_5241_4130# avss rc_osc_level_shifter_0/outb_h sky130_fd_pr__nfet_g5v0d10v5_6XHUDR
 .ends
 

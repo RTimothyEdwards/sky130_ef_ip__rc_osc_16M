@@ -10,6 +10,10 @@ T {Disable shunts} -230 890 0 0 0.4 0.4 {}
 T {Current-starved ring oscillator 16MHz} -200 -390 0 0 0.65 0.65 {}
 T {Current biasing} -500 210 0 0 0.4 0.4 {}
 T {sky130_ef_ip__rc_osc_16M} -130 -460 0 0 0.7 0.7 {}
+T {NOTE:  Resistor needs trimming.
+Existing resistor in layout is 7.5um per resistor x 120 resistors,
+divided into two sections of 60 resistors each (total length =
+7.5 * 60 * 2 = 900um)} -710 -290 0 0 0.4 0.4 {}
 N -110 -20 -110 30 {
 lab=#net1}
 N -190 -50 -150 -50 {
@@ -530,9 +534,9 @@ N -580 -30 -530 -30 {
 lab=avss}
 N -530 -110 -530 -30 {
 lab=avss}
-N -570 -70 -510 -70 {
+N -600 -70 -510 -70 {
 lab=avdd}
-N -570 -170 -570 -70 {
+N -600 -170 -600 -70 {
 lab=avdd}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -130 60 0 0 {name=M1
 L=0.5
