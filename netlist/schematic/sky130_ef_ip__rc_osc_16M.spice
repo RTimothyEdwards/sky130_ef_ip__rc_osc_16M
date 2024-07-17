@@ -20,7 +20,7 @@ XM28 net11 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
 XM29 net10 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
 XM21 nbias nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
 XM22 pbias pbias avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2.52 nf=1 m=1
-XR1 net18 avdd avss sky130_fd_pr__res_xhigh_po_0p35 L=480 mult=1 m=1
+XR1 net18 avdd avss sky130_fd_pr__res_xhigh_po_0p35 L=112.5 mult=1 m=1
 XM23 net18 ena_h nbias avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
 XM30 net12 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
 XM33 nbias enb_h avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
@@ -39,7 +39,7 @@ XM20 net17 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
 XM43 dout0 ena dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.15 W=0.42 nf=1 m=1
 XM35 dout enb dvss dvss sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 m=1
 XM14 dout enb net5 dvdd sky130_fd_pr__pfet_01v8 L=0.15 W=1.5 nf=1 m=1
-XR2 avdd avdd avss sky130_fd_pr__res_xhigh_po_0p35 L=420 mult=1 m=1
+XR2 avdd avdd avss sky130_fd_pr__res_xhigh_po_0p35 L=787.5 mult=1 m=1
 .ends
 
 * expanding   symbol:  rc_osc_level_shifter.sym # of pins=8

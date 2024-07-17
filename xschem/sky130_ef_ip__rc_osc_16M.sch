@@ -825,7 +825,7 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} -510 -30 0 0 {name=R1
-L=480
+L=112.5
 model=res_xhigh_po_0p35
 spiceprefix=X
 mult=1}
@@ -1098,7 +1098,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} -510 -110 0 0 {name=R2
-L=420
+L=787.5
 model=res_xhigh_po_0p35
 spiceprefix=X
 mult=1}
