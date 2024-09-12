@@ -1,0 +1,580 @@
+#this is just an inital copied file that will be reviewed
+name: sky130_ef_ip__rc_osc_16M
+description: 16MHz R-C oscillator
+PDK: sky130A
+cace_format: 5.2
+authorship:
+  designer: Brady Etz  
+  company: Brady Etz 
+  creation_date: April 15, 2024
+  license: Apache 2.0
+paths:
+  root: ..
+  documentation: docs
+  schematic: xschem
+  magic: mag
+  layout: gds
+  netlist: netlist
+pins:
+  avdd:
+    description: Analog power supply
+    type: power
+    direction: inout
+    Vmin: '3.0'
+    Vmax: '5.2'
+  avss:
+    description: Analog ground
+    type: ground
+    direction: inout
+    Vmin: '-0.3'
+    Vmax: '0.3'
+  dvdd:
+    description: Digital power supply
+    type: power
+    direction: inout
+    Vmin: '1.74'
+    Vmax: '1.96'
+  dvss:
+    description: Digital ground
+    type: ground
+    direction: inout
+    Vmin: '-0.02'
+    Vmax: '0.02'
+  ibias:
+    description: External 50nA bias current
+    type: power
+    direction: inout
+    Vmin:
+    - avss
+    - '-'
+    - '0.3'
+    Vmax:
+    - avdd
+    - +
+    - '0.3'
+  ena:
+    description: Oscillator enable input (active high)
+    type: digital
+    direction: input
+    Vmin:
+    - dvss
+    - '-'
+    - '0.3'
+    Vmax:
+    - dvdd
+    - +
+    - '0.3'
+  standby:
+    description: Output clock enable (active low)
+    type: digital
+    direction: input
+    Vmin:
+    - dvss
+    - '-'
+    - '0.3'
+    Vmax:
+    - dvdd
+    - +
+    - '0.3'
+  xin:
+    description: Oscillator input from crystal
+    type: signal
+    direction: inout
+    Vmin:
+    - avss
+    - '-'
+    - '0.3'
+    Vmax:
+    - avdd
+    - +
+    - '0.3'
+  xout:
+    description: Oscillator output to crystal
+    type: signal
+    direction: inout
+    Vmin: avss
+    Vmax: avdd
+  dout:
+    description: Digital clock output
+    type: digital
+    direction: output
+    Vmin:
+    - dvss
+    - '-'
+    - '0.1'
+    Vmax:
+    - dvdd
+    - +
+    - '0.1'
+default_conditions:
+  Vavdd:
+    description: Analog power supply voltage
+    display: avdd
+    unit: V
+    minimum: '2.7'
+    typical: '3.3'
+    maximum: '5.5'
+  Vavss:
+    description: Analog ground
+    display: avss
+    unit: V
+    typical: '0'
+  Vdvdd:
+    description: Digital power supply voltage
+    display: dvdd
+    unit: V
+    minimum: '1.72'
+    typical: '1.8'
+    maximum: '1.98'
+  Vdvss:
+    description: Digital ground
+    display: dvss
+    unit: V
+    typical: '0'
+  Ibias:
+    description: Reference current
+    display: ibias
+    unit: nA
+    typical: '50'
+  Rout:
+    description: Output load resistance
+    display: RLoad
+    unit: MΩ
+    typical: '100'
+  Cout:
+    description: Output load capacitance
+    display: CLoad
+    unit: fF
+    typical: '200'
+  Cstray:
+    description: Crystal circuit stray capacitance
+    display: Cstray
+    unit: pF
+    typical: '2'
+  Cxtal:
+    description: Board capacitors for crystal loading
+    display: Cxtal
+    unit: pF
+    typical: '21'
+    note: Used for simulation. Actual values will depend on crystal datasheet.
+  ena:
+    description: Oscillator enable
+    display: ena
+    typical: '1'
+  standby:
+    description: Output clock disable
+    display: standby
+    typical: '0'
+  temperature:
+    description: Ambient temperature
+    display: Temp
+    unit: °C
+    minimum: '-40'
+    typical: '25'
+    maximum: '85'
+  corner:
+    description: Process corner
+    display: Corner
+    minimum: ss
+    typical: tt
+    maximum: ff
+  iterations:
+    description: Iterations to run
+    display: Iterations
+    minimum: '1'
+    maximum: '10'
+    step: linear
+    stepsize: '1'
+parameters:
+  Idd_enabled:
+    description: Current draw through both supplies, oscillator enabled
+    display: Active current
+    unit: µA
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '1'
+      maximum:
+        value: '1.2'
+        fail: true
+    conditions:
+      Vavdd:
+        typical: '3.3'
+      Vdvdd:
+        typical: '1.8'
+      temperature:
+        typical: '25'
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+    tool:
+      ngspice:
+        template: tb_current_avdd.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Idd_enabled
+  Idd_disabled:
+    description: Current draw through both supplies, shutdown
+    display: Shutdown current
+    unit: nA
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '1'
+      maximum:
+        value: '2'
+        fail: true
+    conditions:
+      Vavdd:
+        typical: '3.3'
+      Vdvdd:
+        typical: '1.8'
+      ena:
+        typical: '0'
+      standby:
+        typical: '1'
+      temperature:
+        typical: '25'
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+    tool:
+      ngspice:
+        template: tb_current_total.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Idd_disabled
+  Vol:
+    description: Output voltage low (Vol - Vss)
+    display: Relative output voltage low (Vol - Vss)
+    unit: V
+    spec:
+      typical:
+        value: '0'
+      maximum:
+        value: '0.1'
+        fail: true
+    conditions:
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+      Vavdd:
+        typical: '3.3'
+      Vdvdd:
+        minimum: '1.72'
+        typical: '1.8'
+        maximum: '1.98'
+    tool:
+      ngspice:
+        template: tb_vol.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Vol
+  Voh:
+    description: Output voltage high (Voh - Vdd)
+    display: Relative output voltage high (Voh - Vdd)
+    unit: V
+    spec:
+      minimum:
+        value: '-0.1'
+        fail: true
+      typical:
+        value: '0'
+    conditions:
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+      Vavdd:
+        typical: '3.3'
+      Vdvdd:
+        minimum: '1.72'
+        typical: '1.8'
+        maximum: '1.98'
+    tool:
+      ngspice:
+        template: tb_voh.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Voh
+  Time_rise:
+    description: Rise time on dout
+    display: Dout Rise Time
+    unit: ns
+    spec:
+      minimum:
+        value: '2'
+        fail: true
+      typical:
+        value: '5'
+      maximum:
+        value: '6'
+        fail: true
+    conditions:
+      temperature:
+        minimum: '-40'
+        typical: '25'
+        maximum: '85'
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+      Vavdd:
+        typical: '3.3'
+      Vdvdd:
+        minimum: '1.72'
+        typical: '1.8'
+        maximum: '1.98'
+    tool:
+      ngspice:
+        template: tb_rise.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Time_rise
+  Time_fall:
+    description: Fall time on dout
+    display: Dout Fall Time
+    unit: ns
+    spec:
+      minimum:
+        value: '2'
+        fail: true
+      typical:
+        value: '5'
+      maximum:
+        value: '6'
+        fail: true
+    conditions:
+      temperature:
+        minimum: '-40'
+        typical: '25'
+        maximum: '85'
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+      Vavdd:
+        typical: '3.3'
+      Vdvdd:
+        minimum: '1.72'
+        typical: '1.8'
+        maximum: '1.98'
+    tool:
+      ngspice:
+        template: tb_fall.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Time_fall
+  Duty_cycle:
+    description: Oscillator duty cycle after initial startup
+    display: Duty cycle
+    unit: '%'
+    spec:
+      minimum:
+        value: '45'
+        fail: true
+      typical:
+        value: '50'
+      maximum:
+        value: '55'
+        fail: true
+    conditions:
+      temperature:
+        minimum: '-40'
+        typical: '25'
+        maximum: '85'
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+    tool:
+      ngspice:
+        template: tb_duty.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Duty_cycle
+  Startup_enable:
+    description: Startup time from activating the clock
+    display: Startup (enable)
+    unit: ms
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '1'
+      maximum:
+        value: '2'
+        fail: true
+    conditions:
+      temperature:
+        minimum: '-40'
+        typical: '25'
+        maximum: '85'
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+      Vavdd:
+        minimum: '2.7'
+        typical: '3.3'
+        maximum: '5.5'
+      Vdvdd:
+        minimum: '1.72'
+        typical: '1.8'
+        maximum: '1.98'
+    tool:
+      ngspice:
+        template: tb_startup_clk_on.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Startup_enable
+  Startup_power_on:
+    description: Startup time from supply voltage on
+    display: Startup (power-on)
+    unit: ms
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '2'
+      maximum:
+        value: '4'
+        fail: true
+    conditions:
+      temperature:
+        minimum: '-40'
+        typical: '25'
+        maximum: '85'
+      corner:
+        enumerate:
+        - ss
+        - fs
+        - tt
+        - sf
+        - ff
+      Vavdd:
+        minimum: '2.7'
+        typical: '3.3'
+        maximum: '5.5'
+      Vdvdd:
+        minimum: '1.72'
+        typical: '1.8'
+        maximum: '1.98'
+    tool:
+      ngspice:
+        template: tb_startup_pwron.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Startup_power_on
+
+  magic_area:
+    spec:
+      area:
+        display: Area
+        description: Total circuit layout area
+        unit: µm²
+        maximum:
+          value: any
+      width:
+        display: Width
+        description: Total circuit layout width
+        unit: µm
+        maximum:
+          value: any
+      height:
+        display: Height
+        description: Total circuit layout height
+        unit: µm
+        maximum:
+          value: any
+    tool:
+      magic_area
+
+  magic_drc:
+    description: Magic DRC
+    display: Magic DRC
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+      magic_drc:
+        gds_flatten: true
+
+  netgen_lvs:
+    description: Netgen LVS
+    display: Netgen LVS
+    spec:
+      lvs_errors:
+        maximum:
+          value: 0
+    tool:
+      netgen_lvs:
+        script: run_lvs.tcl
+
+  klayout_drc_full:
+    description: KLayout DRC full
+    display: KLayout DRC full
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true', '-rd', 'beol=true', '-rd', 'offgrid=true']
