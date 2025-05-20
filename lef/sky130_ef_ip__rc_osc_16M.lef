@@ -8,39 +8,39 @@ MACRO sky130_ef_ip__rc_osc_16M
   ORIGIN 0.000 0.000 ;
   SIZE 61.210 BY 53.620 ;
   PIN avdd
-    ANTENNADIFFAREA 136.770493 ;
+    ANTENNADIFFAREA 137.480896 ;
     PORT
       LAYER met2 ;
-        RECT 0.000 38.505 53.490 44.095 ;
+        RECT -0.120 38.695 53.690 44.285 ;
     END
     PORT
       LAYER met2 ;
-        RECT 53.930 38.505 54.430 44.095 ;
+        RECT 54.130 38.695 54.630 44.285 ;
     END
   END avdd
   PIN avss
     ANTENNADIFFAREA 96.482201 ;
     PORT
       LAYER met2 ;
-        RECT 0.000 9.720 1.595 15.310 ;
+        RECT 52.890 9.720 54.680 15.310 ;
     END
     PORT
       LAYER met2 ;
-        RECT 52.890 9.720 54.430 15.310 ;
+        RECT -0.120 9.720 1.595 15.310 ;
     END
   END avss
   PIN dvss
     ANTENNADIFFAREA 5.493300 ;
     PORT
       LAYER met1 ;
-        RECT 52.540 31.820 54.430 35.605 ;
+        RECT 52.540 31.910 54.630 35.795 ;
     END
   END dvss
   PIN dvdd
     ANTENNADIFFAREA 5.371800 ;
     PORT
       LAYER met1 ;
-        RECT 52.540 18.170 54.430 23.400 ;
+        RECT 52.540 18.170 54.680 23.490 ;
     END
   END dvdd
   PIN ena
@@ -48,33 +48,34 @@ MACRO sky130_ef_ip__rc_osc_16M
     ANTENNADIFFAREA 0.202500 ;
     PORT
       LAYER met2 ;
-        RECT 53.850 24.980 54.850 25.980 ;
+        RECT 53.850 25.070 54.850 26.070 ;
     END
   END ena
   PIN dout
     ANTENNADIFFAREA 0.731800 ;
     PORT
       LAYER met2 ;
-        RECT 53.850 29.250 54.850 30.250 ;
+        RECT 53.850 29.340 54.850 30.340 ;
     END
   END dout
   OBS
       LAYER nwell ;
-        RECT 0.000 3.500 54.885 50.120 ;
+        RECT -0.120 3.400 54.885 50.410 ;
       LAYER li1 ;
-        RECT 0.430 3.965 54.705 49.680 ;
+        RECT 0.310 3.865 54.705 49.970 ;
       LAYER met1 ;
-        RECT 0.430 35.885 54.350 47.500 ;
-        RECT 0.430 31.540 52.260 35.885 ;
-        RECT 0.430 23.680 54.350 31.540 ;
-        RECT 0.430 17.890 52.260 23.680 ;
-        RECT 0.430 6.090 54.350 17.890 ;
+        RECT 0.310 36.075 54.350 47.690 ;
+        RECT 0.310 31.630 52.260 36.075 ;
+        RECT 0.310 23.770 54.350 31.630 ;
+        RECT 0.310 17.890 52.260 23.770 ;
+        RECT 0.310 6.090 54.350 17.890 ;
       LAYER met2 ;
-        RECT 0.460 30.530 54.285 38.225 ;
-        RECT 0.460 28.970 53.570 30.530 ;
-        RECT 0.460 26.260 54.285 28.970 ;
-        RECT 0.460 24.700 53.570 26.260 ;
-        RECT 0.460 15.590 54.285 24.700 ;
+        RECT 0.340 44.565 54.285 47.700 ;
+        RECT 0.340 30.620 54.285 38.415 ;
+        RECT 0.340 29.060 53.570 30.620 ;
+        RECT 0.340 26.350 54.285 29.060 ;
+        RECT 0.340 24.790 53.570 26.350 ;
+        RECT 0.340 15.590 54.285 24.790 ;
         RECT 1.875 9.720 52.610 15.590 ;
   END
 END sky130_ef_ip__rc_osc_16M

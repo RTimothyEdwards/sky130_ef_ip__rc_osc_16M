@@ -1,4 +1,4 @@
-Netgen 1.5.273 compiled on Tue May 14 15:25:31 EDT 2024
+Netgen 1.5.292 compiled on Sat Mar 15 21:11:52 EDT 2025
 Warning: netgen command 'format' use fully-qualified name '::netgen::format'
 Warning: netgen command 'global' use fully-qualified name '::netgen::global'
 Reading netlist file ../netlist/layout/sky130_ef_ip__rc_osc_16M.spice
@@ -226,6 +226,10 @@ Circuit 1 contains 31 nets,    Circuit 2 contains 31 nets.
 
 Final result: 
 Circuits match uniquely.
-.
+Property errors were found.
+
+The following cells had property errors:
+ sky130_ef_ip__rc_osc_16M
+
 Logging to file "sky130_ef_ip__rc_osc_16M_comp.out" disabled
 LVS Done.

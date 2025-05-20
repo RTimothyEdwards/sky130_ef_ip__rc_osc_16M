@@ -141,7 +141,9 @@ sky130_fd_pr__res_xhigh_po_0p35 (120->2)   |sky130_fd_pr__res_xhigh_po_0p35 (2)
 Number of devices: 39                      |Number of devices: 39                      
 Number of nets: 31                         |Number of nets: 31                         
 ---------------------------------------------------------------------------------------
-Netlists match uniquely.
+Netlists match uniquely with property errors.
+sky130_fd_pr__diode_pw2nd_05v5_FT76RJ:D3/sky130_fd_pr__diode_pw2nd_05v5:0 vs. sky130_fd_pr__diode_pw2nd_05v5:D3:
+ perim circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
 
 Subcircuit pins:
 Circuit 1: sky130_ef_ip__rc_osc_16M        |Circuit 2: sky130_ef_ip__rc_osc_16M        
@@ -157,4 +159,7 @@ Cell pin lists are equivalent.
 Device classes sky130_ef_ip__rc_osc_16M and sky130_ef_ip__rc_osc_16M are equivalent.
 
 Final result: Circuits match uniquely.
-.
+Property errors were found.
+
+The following cells had property errors:
+ sky130_ef_ip__rc_osc_16M
