@@ -226,10 +226,6 @@ Circuit 1 contains 31 nets,    Circuit 2 contains 31 nets.
 
 Final result: 
 Circuits match uniquely.
-Property errors were found.
-
-The following cells had property errors:
- sky130_ef_ip__rc_osc_16M
-
+.
 Logging to file "sky130_ef_ip__rc_osc_16M_comp.out" disabled
 LVS Done.
